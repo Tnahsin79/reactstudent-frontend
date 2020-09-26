@@ -1,0 +1,13 @@
+.add,.update{
+    margin-top: 1vw;
+}
+.container{
+    background: url("./bg.jpg");
+    margin-top: 1vw;
+    border: 1px solid black;
+    border-radius: 5px;
+    color: white;
+}
+tr{
+    color: white;
+}
