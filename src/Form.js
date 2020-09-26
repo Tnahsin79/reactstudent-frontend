@@ -9,7 +9,7 @@ class Form extends Component {
         }
     }
     componentDidMount() {
-        fetch("http://localhost:3000/students")
+        fetch("https://reactstudent.herokuapp.com/students")
             .then((res) => res.json())
             .then((data) => {
                 this.setState({
@@ -18,7 +18,7 @@ class Form extends Component {
             });
     }
     componentDidUpdate() {
-        fetch("http://localhost:3000/students")
+        fetch("https://reactstudent.herokuapp.com/students")
             .then((res) => res.json())
             .then((data) => {
                 this.setState({
@@ -33,7 +33,7 @@ class Form extends Component {
                 lname: document.getElementById("lname").value,
                 age: document.getElementById("age").value
             }
-            let temp = await fetch("http://localhost:3000/student", {
+            let temp = await fetch("https://reactstudent.herokuapp.com/student", {
                 method: "POST",
                 body: JSON.stringify(data),
                 headers: {
@@ -55,7 +55,7 @@ class Form extends Component {
                 lname: document.getElementById("uplname").value,
                 age: document.getElementById("upage").value
             }
-            let temp = await fetch("http://localhost:3000/update", {
+            let temp = await fetch("https://reactstudent.herokuapp.com/update", {
                 method: "PUT",
                 body: JSON.stringify(data),
                 headers: {
@@ -76,7 +76,7 @@ class Form extends Component {
             var data = {
                 delsid: sid
             }
-            let temp = await fetch("http://localhost:3000/delete", {
+            let temp = await fetch("https://reactstudent.herokuapp.com/delete", {
                 method: "DELETE",
                 body: JSON.stringify(data),
                 headers: {
