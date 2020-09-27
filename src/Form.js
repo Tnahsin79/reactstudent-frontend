@@ -44,14 +44,6 @@ class Form extends Component {
                 }
             });
             alert("Student added");
-            fetch("https://reactstudent.herokuapp.com/students")
-                //fetch("http://localhost:3000/students")
-                .then((res) => res.json())
-                .then((data) => {
-                    this.setState({
-                        studata: data
-                    });
-                });
         }
         catch (error) {
             console.log(error);
@@ -75,14 +67,6 @@ class Form extends Component {
                 }
             });
             alert("Data updated");
-            fetch("https://reactstudent.herokuapp.com/students")
-                //fetch("http://localhost:3000/students")
-                .then((res) => res.json())
-                .then((data) => {
-                    this.setState({
-                        studata: data
-                    });
-                });
         }
         catch (error) {
             console.log(error);
@@ -105,14 +89,6 @@ class Form extends Component {
                 }
             });
             alert("Data deleted");
-            fetch("https://reactstudent.herokuapp.com/students")
-                //fetch("http://localhost:3000/students")
-                .then((res) => res.json())
-                .then((data) => {
-                    this.setState({
-                        studata: data
-                    });
-                });
         }
         catch (error) {
             console.log(error);
