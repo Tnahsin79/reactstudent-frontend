@@ -8,7 +8,7 @@ class Form extends Component {
             studata: []
         }
     }
-    componentDidMount() {
+    /*componentDidMount() {
         fetch("https://reactstudent.herokuapp.com/students")
             //fetch("http://localhost:3000/students")
             .then((res) => res.json())
@@ -17,8 +17,8 @@ class Form extends Component {
                     studata: data
                 });
             });
-    }
-    /*componentDidUpdate() {
+    }*/
+    componentDidUpdate() {
         fetch("https://reactstudent.herokuapp.com/students")
         //fetch("http://localhost:3000/students")
             .then((res) => res.json())
@@ -27,7 +27,7 @@ class Form extends Component {
                     studata: data
                 });
             });
-    }*/
+    }
     insert = async () => {
         try {
             var data = {
