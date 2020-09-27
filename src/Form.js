@@ -10,7 +10,7 @@ class Form extends Component {
     }
     componentDidMount() {
         fetch("https://reactstudent.herokuapp.com/students")
-        //fetch("http://localhost:3000/students")
+            //fetch("http://localhost:3000/students")
             .then((res) => res.json())
             .then((data) => {
                 this.setState({
@@ -18,7 +18,7 @@ class Form extends Component {
                 });
             });
     }
-    componentDidUpdate() {
+    /*componentDidUpdate() {
         fetch("https://reactstudent.herokuapp.com/students")
         //fetch("http://localhost:3000/students")
             .then((res) => res.json())
@@ -27,7 +27,7 @@ class Form extends Component {
                     studata: data
                 });
             });
-    }
+    }*/
     insert = async () => {
         try {
             var data = {
@@ -36,7 +36,7 @@ class Form extends Component {
                 age: document.getElementById("age").value
             }
             let temp = await fetch("https://reactstudent.herokuapp.com/student", {
-            //    let temp = await fetch("http://localhost:3000/student",{
+                //    let temp = await fetch("http://localhost:3000/student",{
                 method: "POST",
                 body: JSON.stringify(data),
                 headers: {
@@ -44,6 +44,14 @@ class Form extends Component {
                 }
             });
             alert("Student added");
+            fetch("https://reactstudent.herokuapp.com/students")
+                //fetch("http://localhost:3000/students")
+                .then((res) => res.json())
+                .then((data) => {
+                    this.setState({
+                        studata: data
+                    });
+                });
         }
         catch (error) {
             console.log(error);
@@ -59,7 +67,7 @@ class Form extends Component {
                 age: document.getElementById("upage").value
             }
             let temp = await fetch("https://reactstudent.herokuapp.com/update", {
-            //    let temp = await fetch("http://localhost:3000/update",{
+                //    let temp = await fetch("http://localhost:3000/update",{
                 method: "PUT",
                 body: JSON.stringify(data),
                 headers: {
@@ -67,6 +75,14 @@ class Form extends Component {
                 }
             });
             alert("Data updated");
+            fetch("https://reactstudent.herokuapp.com/students")
+                //fetch("http://localhost:3000/students")
+                .then((res) => res.json())
+                .then((data) => {
+                    this.setState({
+                        studata: data
+                    });
+                });
         }
         catch (error) {
             console.log(error);
@@ -81,7 +97,7 @@ class Form extends Component {
                 delsid: sid
             }
             let temp = await fetch("https://reactstudent.herokuapp.com/delete", {
-            //    let temp = await fetch("http://localhost:3000/delete",{
+                //    let temp = await fetch("http://localhost:3000/delete",{
                 method: "DELETE",
                 body: JSON.stringify(data),
                 headers: {
@@ -89,6 +105,14 @@ class Form extends Component {
                 }
             });
             alert("Data deleted");
+            fetch("https://reactstudent.herokuapp.com/students")
+                //fetch("http://localhost:3000/students")
+                .then((res) => res.json())
+                .then((data) => {
+                    this.setState({
+                        studata: data
+                    });
+                });
         }
         catch (error) {
             console.log(error);
